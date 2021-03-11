@@ -1,0 +1,20 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "crm and hrm",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rahul Kumar",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "express-formidable": "^1.2.0",
+    "mongoose": "^5.11.19",
+    "morgan": "^1.10.0"
+  }
+}
