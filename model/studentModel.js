@@ -7,7 +7,7 @@ const studentSchema = new Schema({
         required: "Name is required",
     },
     classNum: {
-        type: String,
+        type: Number,
         
     },
     fatherName: {
@@ -20,18 +20,10 @@ const studentSchema = new Schema({
     courseName: {
         type: String,
     },
-    fee: {
+    school: {
         type: String,
-        required: "fees description is required",
-    },           
-    day: {
-        type: Date,
-
     },
-    registerTime: {
-        type: String,
-
-    },
+    
     emailAdd: {
         type: String,
     },
@@ -40,11 +32,22 @@ const studentSchema = new Schema({
         minLength: 10,
         maxLength: 10,
     },
-    address: {
+    modeOfEnquiry: {
         type: String,
-    }
-
-});
+    },
+    branch:{
+        type: String,
+    },
+    refferedBy:{
+        type: String,
+    },
+    leadGeneratedBy: {
+        type: String,
+    },
+    leadFollowedUpBy: {
+        type: String,
+    },
+},{timestamps: true});
 
 
 export default mongoose.model("student",studentSchema);
