@@ -6,14 +6,19 @@ const UserSchema= new Schema({
     name:{
         type: String,
         required: "Name is Required",
+        trim: true,
+
     },
     emailAdd:{
         type: String,
         required: "Email is Required",
         unique: true,
+        trim: true,
+
     },
     position: {
         type: String,
+        trim: true,
         
     },
     password: {
@@ -21,14 +26,19 @@ const UserSchema= new Schema({
         required: "password is required",
         min: 6,
         max: 64,
+        trim: true,
+
     },
     phoneNo: {
         type: String,
+        trim: true,
         
     },
     courseName:{
         type: String,
-        required : "course name is required"
+        required : "course name is required",
+        trim: true,
+
     }
 });
 

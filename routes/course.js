@@ -1,9 +1,9 @@
 import express from "express";
 import addCourse from "../controllers/addCourse";
-import requiresSignIn from "../middleware/index";
+import requireSignIn from "../middleware/index";
 const router = express.Router();
 
 
-router.post("/add-course",requiresSignIn,addCourse);
+router.post("/add-course",requireSignIn,addCourse);
 
 module.exports=router;

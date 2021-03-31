@@ -7,6 +7,12 @@ const CourseSchema= new Schema({
     name: {
         type: String,
         required: "Course Name is required",
+        trim: true,
+    
+    },
+    branch: {
+        type: String,
+        trim: true,
     },
     from: {
         type: String,
@@ -16,13 +22,17 @@ const CourseSchema= new Schema({
         type: String,
         required: "Course ending date is required",
     },
-    classFrom: {
+    subject1: {
         type: String,
-        required: "Class starting date required",
+        required: "Subject 1 is required",
     },
-    classTo: {
+    subject2: {
         type: String,
-        required: "Class ending date is required",
+        required: "subject 2 is required",
+    },
+    subject3: {
+        type: String,
+        required: "subject 3 is required"
     },
     
 });

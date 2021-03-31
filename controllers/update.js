@@ -1,4 +1,5 @@
 import studentModel from "../model/studentModel";
+import feeModel from "../model/feeModel";
 
 
 const update=async (req,res)=>{
@@ -23,6 +24,20 @@ const update=async (req,res)=>{
         if(response){
             res.status(200).send(response);
         }
+    }catch(err)
+    {
+        console.log(err);
+    }
+}
+export const updateFee= async(req,res)=>{
+    const list =JSON.parse( req.fields.list);
+    console.log(req.fields);
+    req.fields.list= list;
+    
+    try{
+        const response = await feeModel.findOneAndUpdate(req.fields.phoneNo,req.fields);
+        console.log(response);
+        if(response)return res.status(200).send(response);
     }catch(err)
     {
         console.log(err);

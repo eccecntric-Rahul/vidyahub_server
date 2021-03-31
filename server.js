@@ -5,6 +5,7 @@ import fs from "fs";
 import cors from "cors";
 import formidable from "express-formidable";
 require("dotenv").config();
+const AutoIncrementFactory = require('mongoose-sequence');
 
 const app = express();
 const port=process.env.PORT||8000;
@@ -18,14 +19,16 @@ app.use(morgan("dev"));
 // for json object Data
 app.use(express.json());
 
-// for form data accessing
+
+
 app.use(formidable());
 
-
 // db connection 
-mongoose.connect(process.env.URI,{useNewUrlParser:true,useFindAndModify:false,useUnifiedTopology:true,useCreateIndex:true,})
-.then(()=>console.log("db connected"))
-.catch((err)=>console.log("DB connection error"));
+const connection =mongoose.connect(process.env.URI,{useNewUrlParser:true,useFindAndModify:false,useUnifiedTopology:true,useCreateIndex:true,});
+// .then(()=>console.log("db connected"))
+// .catch((err)=>console.log("DB connection error"));
+
+const AutoIncrement = AutoIncrementFactory(connection);
 
 fs.readdirSync("./routes").map((r)=>app.use("/api",require(`./routes/${r}`)));
 

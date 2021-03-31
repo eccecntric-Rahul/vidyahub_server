@@ -1,4 +1,3 @@
-
 import mongoose from "mongoose";
 
 const {Schema} = mongoose;
@@ -14,22 +13,44 @@ const feeSchema = new Schema({
         required: "Email is required",
         unique: true,
     },
-    amount: {
+    phoneNo:{
         type: Number,
-
+        required: "phone no is required",
     },
     status:{
         type: String,
-
+        trim: true,
+        required: "status is required",
     },
-    feePayDay:{
-        type: Date,
+    scholarship:{
+        type: Number,
+        trim: true,
+        required: "scholarship is required",
     },
-    user:{
-        type: ObjectId,
-        ref: "studentadmission",
+    feePayable:{
+        type: Number,
+        trim: true,
+        required: "fee Payable is required",
     },
-
+    enrolmentFee:{
+        type: Number,
+        trim: true,
+        required: "enrolment fee is required",
+    },
+    totalCourseFee:{
+        type: Number,
+        trim: true,
+        required: "total course fee is required",
+    },
+    feeInstallments:{
+        type: Number,
+        trim: true,
+        required: "fee installment no is required",
+    },
+    list:[{installment: String,
+        date: String,
+        status: String,
+    }]
 });
 
 

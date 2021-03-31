@@ -1,6 +1,6 @@
 import jwt from "express-jwt";
 
-const requiresSignIn= jwt({
+const requireSignIn= jwt({
         secret: process.env.SECRET_KEY,
         algorithms: ["HS256"],
         getToken: function fromHeaderOrQuerystring (req) {
@@ -15,4 +15,4 @@ const requiresSignIn= jwt({
 
 
 
-export default requiresSignIn;
+export default requireSignIn;
